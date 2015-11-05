@@ -9,6 +9,7 @@ namespace ConsoleApplication1
     class Snake : Figure
     {
         Direction direct;
+        public int speed = 1;
         public Snake(Point tail, int length, Direction _direct)
         {
             PointList = new List<Point>();

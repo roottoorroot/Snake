@@ -38,13 +38,14 @@ namespace ConsoleApplication1
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();
+                    snake.speed = snake.speed * 2;
                 }
                 else
                 {
                     snake.Move();
                 }
 
-                Thread.Sleep(100);
+                Thread.Sleep(100/snake.speed + 10);
 
                 if (Console.KeyAvailable)
                 {
