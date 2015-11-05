@@ -45,7 +45,7 @@ namespace ConsoleApplication1
                     snake.Move();
                 }
 
-                Thread.Sleep(100/snake.speed + 10);
+                Thread.Sleep(100/snake.speed + 90);
 
                 if (Console.KeyAvailable)
                 {
