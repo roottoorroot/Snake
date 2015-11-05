@@ -1,0 +1,6 @@
+D:\Project\Snake\Snake\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+D:\Project\Snake\Snake\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+D:\Project\Snake\Snake\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\Project\Snake\Snake\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+D:\Project\Snake\Snake\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+D:\Project\Snake\Snake\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
