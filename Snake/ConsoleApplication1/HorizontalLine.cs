@@ -12,7 +12,7 @@ namespace ConsoleApplication1
        
 
        
-        public HorizontalLine(int xLeft, int xRight, int y, char sym)
+        public HorizontalLine(int xLeft, int xRight, int y, char sym) //горизонтальные линии для отрисовки интерфейса
         {
 
             PointList = new List<Point>();

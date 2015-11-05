@@ -19,7 +19,7 @@ namespace ConsoleApplication1
             }
         }
 
-        internal bool IsHit(Figure figure)
+        internal bool IsHit(Figure figure)//Полиморфизм в чистом виде, базовый класс figure, от него наследуют все другие
         {
             foreach (var p in PointList)
             {
