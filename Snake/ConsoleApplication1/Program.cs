@@ -38,28 +38,7 @@ namespace ConsoleApplication1
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
-                    if (key.Key == ConsoleKey.LeftArrow)
-                    {
-                        snake.direct = Direction.left;
-                    }
-                    else
-                    {
-                        if (key.Key == ConsoleKey.RightArrow)
-                        {
-                            snake.direct = Direction.right;
-                        }
-                        else
-                        {
-                            if (key.Key == ConsoleKey.DownArrow)
-                            {
-                                snake.direct = Direction.down;
-                            }
-                            else
-                            {
-                                snake.direct = Direction.up;
-                            }
-                        }
-                    }
+                    snake.HandlKey(key.Key);
                 }// End first if
 
                 Thread.Sleep(100);

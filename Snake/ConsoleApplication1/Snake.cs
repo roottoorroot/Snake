@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
     class Snake : Figure
     {
-        public Direction direct;
+        Direction direct;
         public Snake(Point tail, int length, Direction _direct)
         {
             PointList = new List<Point>();
@@ -41,7 +41,33 @@ namespace ConsoleApplication1
             Point nextPoin = new Point(head);
             nextPoin.Move(1, direct);
             return nextPoin;
-
         }
+        public void HandlKey(ConsoleKey key)
+        {
+
+            if (key == ConsoleKey.LeftArrow)
+            {
+                direct = Direction.left;
+            }
+            else
+            {
+                if (key == ConsoleKey.RightArrow)
+                {
+                   direct = Direction.right;
+                }
+                else
+                {
+                    if (key == ConsoleKey.DownArrow)
+                    {
+                       direct = Direction.down;
+                    }
+                    else
+                    {
+                        direct = Direction.up;
+                    }
+                }
+            }
+        }
+
     }
 }
