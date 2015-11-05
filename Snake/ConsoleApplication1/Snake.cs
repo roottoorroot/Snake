@@ -82,5 +82,18 @@ namespace ConsoleApplication1
                 return false;
             }
         }
+
+        internal bool IsHitTail()
+        {
+            var head = PointList.Last();
+            for (int i = 0; i < PointList.Count - 2; i++)
+            {
+                if (head.IsHit(PointList[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

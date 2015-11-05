@@ -11,34 +11,30 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            Point pointOne = new Point(4, 5, '*');
-            Point pointTwo = new Point(1,2,'#');
-           
-            Console.SetBufferSize(80, 27);
+                      
+            Console.SetBufferSize(80, 27);                         //Bufer size
 
+            Walls wall = new Walls(80,25);                         //Create all Wals
+            Point point = new Point(4, 5, '*');                    //Create point
+            Snake snake = new Snake(point, 2, Direction.right);    //Create first state of snake
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');//Function for generate state of food
+            Point food = foodCreator.CreateFood();                 //Create state of food
 
-            
-
-            HorizontalLine gorLineTop = new  HorizontalLine(0, 78, 0, '+');
-            HorizontalLine gorLineBottom = new HorizontalLine(0, 79, 24, '+');
-            VerticalLine verLineLeft = new VerticalLine(0, 0, 24, '+');
-            VerticalLine verLineRight = new VerticalLine(78, 0, 24, '+');
-
-            gorLineTop.Draw();
-            gorLineBottom.Draw();
-            verLineLeft.Draw();
-            verLineRight.Draw();
-
-            FoodCreator foodCreator = new FoodCreator(80, 24, '$');
-            Point food = foodCreator.CreateFood();
-            food.Draw();
-
-            Snake snake = new Snake(pointOne, 4, Direction.right);
+            wall.Draw();
             snake.Draw();
+            food.Draw();
+            
+                              
+                       
 
             while (true)
             {
-                if (snake.Eat(food))
+                if (wall.IsHit(snake) || snake.IsHitTail()) //Protect to crash with wall or tail
+                {
+                    break;       //Out from circle           
+                }
+
+                if (snake.Eat(food)) 
                 {
                     food = foodCreator.CreateFood();
                     food.Draw();

@@ -18,5 +18,27 @@ namespace ConsoleApplication1
                 point.Draw();
             }
         }
+
+        internal bool IsHit(Figure figure)
+        {
+            foreach (var p in PointList)
+            {
+                if(figure.IsHit(p))
+                return true;
+            }
+            return false;
+        }
+
+        private bool IsHit(Point point)
+        {
+            foreach (var p in PointList)
+            {
+                if (point.IsHit(p))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

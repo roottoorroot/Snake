@@ -24,9 +24,9 @@ namespace ConsoleApplication1
 
         public Point CreateFood()
         {
-            mapWight = rnd.Next(2, mapWight - 2);
-            mapHeight = rnd.Next(2,mapHeight - 2);
-            Point point = new Point(mapWight, mapHeight, sym);
+            int x = rnd.Next(2, mapWight - 2);
+            int y = rnd.Next(2,mapHeight - 2);
+            Point point = new Point(x, y, sym);
             return point;
         }
     }
