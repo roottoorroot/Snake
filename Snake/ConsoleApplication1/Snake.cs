@@ -68,6 +68,19 @@ namespace ConsoleApplication1
                 }
             }
         }
-
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextStep();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                PointList.Add(food);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -29,20 +29,35 @@ namespace ConsoleApplication1
             verLineLeft.Draw();
             verLineRight.Draw();
 
+            FoodCreator foodCreator = new FoodCreator(80, 24, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
 
             Snake snake = new Snake(pointOne, 4, Direction.right);
             snake.Draw();
 
             while (true)
             {
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+                Thread.Sleep(100);
+
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.HandlKey(key.Key);
                 }// End first if
 
-                Thread.Sleep(100);
-                snake.Move();
+               // Thread.Sleep(100);
+                //snake.Move();
 
             }//End while
 

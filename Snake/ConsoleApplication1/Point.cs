@@ -61,6 +61,9 @@ namespace ConsoleApplication1
             sym = ' ';
             Draw();
         }
-        
+        public bool IsHit(Point point)
+        {
+            return point.x == this.x && point.y == this.y;
+        }
     }
 }
