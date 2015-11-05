@@ -32,19 +32,43 @@ namespace ConsoleApplication1
 
             Snake snake = new Snake(pointOne, 4, Direction.right);
             snake.Draw();
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move(); 
-            Thread.Sleep(300);
-            snake.Move(); 
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
+
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    if (key.Key == ConsoleKey.LeftArrow)
+                    {
+                        snake.direct = Direction.left;
+                    }
+                    else
+                    {
+                        if (key.Key == ConsoleKey.RightArrow)
+                        {
+                            snake.direct = Direction.right;
+                        }
+                        else
+                        {
+                            if (key.Key == ConsoleKey.DownArrow)
+                            {
+                                snake.direct = Direction.down;
+                            }
+                            else
+                            {
+                                snake.direct = Direction.up;
+                            }
+                        }
+                    }
+                }// End first if
+
+                Thread.Sleep(100);
+                snake.Move();
+
+            }//End while
+
+
+
 
             Console.ReadKey();
         }

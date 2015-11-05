@@ -8,7 +8,7 @@ namespace ConsoleApplication1
 {
     class Snake : Figure
     {
-        Direction direct;
+        public Direction direct;
         public Snake(Point tail, int length, Direction _direct)
         {
             PointList = new List<Point>();
@@ -35,8 +35,6 @@ namespace ConsoleApplication1
 
             
         }
-
-
         public Point GetNextStep()
         {
             Point head = PointList.Last();

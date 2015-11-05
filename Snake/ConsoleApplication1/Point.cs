@@ -20,22 +20,17 @@ namespace ConsoleApplication1
             y = y1;
             sym = sym1;
         }
-
         public Point(Point p)
         {
             x = p.x;
             y = p.y;
             sym = p.sym;
         }
-
-       
-
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.WriteLine(sym);
         }
-
         public void Move(int offset, Direction direct)
         {
             if (direct == Direction.right)
@@ -52,11 +47,11 @@ namespace ConsoleApplication1
                 {
                     if (direct == Direction.up)
                     {
-                        y = y + offset;
+                        y = y - offset;
                     }
                     else
                     {
-                        y = y - offset;
+                        y = y + offset;
                     }
                 }
             }
